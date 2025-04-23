@@ -1,0 +1,15 @@
+[Unit]
+Description=Worker Activity Monitor
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/advik/Desktop/worker-monitor/worker_monitor.py
+Restart=always
+User=advik
+Group=video
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/home/advik/.Xauthority
+
+[Install]
+WantedBy=multi-user.target
+
